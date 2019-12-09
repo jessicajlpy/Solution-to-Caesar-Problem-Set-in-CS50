@@ -1,0 +1,29 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(int argc, string argv[])
+{
+    int k = atoi(argv[1]);
+    int i = log10(k) + 1;
+    if (argc == 2 && atoi(argv[1]) != 0 && (i == strlen(argv[1])))
+    {
+        string a = get_string("plaintext: ");
+        printf("ciphertext: ");
+        for (int j =0; j < strlen(a); j++)
+        {
+            {
+                char c = ((a[j]) - 'a' + k) % 26 + 'a';
+                printf("%c", c); 
+            } 
+        }
+        printf("\n");
+    }
+    else 
+    {
+        printf("Usage: ./caesar key\n");
+    }
+}   
+
