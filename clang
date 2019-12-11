@@ -14,10 +14,23 @@ int main(int argc, string argv[])
         printf("ciphertext: ");
         for (int j =0; j < strlen(a); j++)
         {
-            {
-                char c = ((a[j]) - 'a' + k) % 26 + 'a';
-                printf("%c", c); 
+            char c = a[j]; 
+            char d = ((c + k - 65) % 26 + 65); // is upper 
+            char e = ((c + k - 97) % 26 + 97); // is lower
+            char g = a[j];
+            if (c >= 65 && c <= 90) 
+            { 
+               printf("%c", d);
             } 
+            else if (c >= 97 && c <= 122)
+            { 
+                printf("%c", e);
+            }
+            else if (c)
+            {
+                printf("%c", g);
+            }
+             
         }
         printf("\n");
     }
